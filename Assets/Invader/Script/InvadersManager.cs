@@ -64,21 +64,21 @@ public class InvadersManager : MonoBehaviour
     void Down()
     {
         //下に１段下がる
-        Debug.Log("Down");
+        //Debug.Log("Down");
         var pos = transform.position;
         transform.position = new Vector2(pos.x, pos.y - move.y);
     }
 
     void Right()
     {
-        Debug.Log("Right");
+        //Debug.Log("Right");
         var pos = transform.position;
         transform.position = new Vector2(pos.x + move.x, pos.y);
     }
 
     void Left()
     {
-        Debug.Log("Left");
+        //Debug.Log("Left");
         var pos = transform.position;
         transform.position = new Vector2(pos.x - move.x, pos.y);
     }
