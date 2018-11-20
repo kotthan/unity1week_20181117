@@ -19,9 +19,9 @@ public class CalcSystemManager : MonoBehaviour {
 		
 	}
 
-    void GetNum ( int num ){
-        textCalc.GetComponent<Text>().text += " + " + num;
-
+    public void AddNum ( int num ){
+        //textCalc.GetComponent<Text>().text += " + " + num;
+        Debug.Log("add " + num);
     }
 
     void Over10 () {

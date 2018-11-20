@@ -5,11 +5,14 @@ using UnityEngine;
 public class InvaderManager : MonoBehaviour {
 
     private int value;
+    CalcSystemManager calc;
 
 	// Use this for initialization
 	void Start () {
         value = Random.Range(1, 9);
         GetComponent<TextMesh>().text = value.ToString();
+        var calcSystem = GameObject.Find("CalcSystem");
+        calc = calcSystem.GetComponent<CalcSystemManager>();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +24,7 @@ public class InvaderManager : MonoBehaviour {
         //Debug.Log("collision enter");
         if (collision.gameObject.tag == "Bullet")
         {
+            calc.AddNum(value);
             //Debug.Log("Destroy");
             Destroy(this.gameObject);
         }
