@@ -16,11 +16,13 @@ public class InvaderManager : MonoBehaviour {
 	void Update () {
 	}
 
-    private void OnTriggerExitD(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision exit");
-        if (collision.gameObject.tag == "Invader")
+        Debug.Log("collision enter");
+        if (collision.gameObject.tag == "Bullet")
         {
+            Debug.Log("Destroy");
+            Destroy(this.gameObject);
         }
     }
 }
