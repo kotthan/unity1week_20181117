@@ -760,6 +760,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
+        type: 2}
+      propertyPath: invaderPrefab
+      value: 
+      objectReference: {fileID: 1406215076317540, guid: 164fc16beaa0a48748b86d93571403a7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e5fd527fc6648bfa3d1f3e25f68404, type: 2}
   m_IsPrefabAsset: 0
@@ -1182,7 +1188,7 @@ Transform:
   - {fileID: 122476476}
   - {fileID: 566172835}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180643267
 GameObject:
