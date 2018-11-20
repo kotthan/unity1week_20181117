@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
 
     private Rigidbody2D rbody;          //プレイヤー制御用
-    private const float MOVE_SPEED = 3; //移動速度固定
+    private const float MOVE_SPEED = 100; //移動速度固定
     private float moveSpeed;            //移動速度
     private bool usingButtons = false;  //ボタンを押しているか
 
@@ -51,11 +51,11 @@ public class PlayerManager : MonoBehaviour {
                 break;
             case MOVE_DIR.LEFT: // 左に移動
                 moveSpeed = MOVE_SPEED * -1;
-                transform.localScale = new Vector2(-1, 1);
+                //transform.localScale = new Vector2(-1, 1);
                 break;
             case MOVE_DIR.RIGHT: //右に移動
                 moveSpeed = MOVE_SPEED;
-                transform.localScale = new Vector2(1, 1);
+                //transform.localScale = new Vector2(1, 1);
                 break;
         }
 
