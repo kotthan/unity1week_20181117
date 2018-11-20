@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee7b69707a244eac85a4ed3b73ff2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textCalc: {fileID: 0}
+  textCalc: {fileID: 1256792719}
 --- !u!4 &1133422479
 Transform:
   m_ObjectHideFlags: 0
@@ -1627,8 +1627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 420}
-  m_SizeDelta: {x: 800, y: 100}
+  m_AnchoredPosition: {x: 0, y: 400}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256792721
 MonoBehaviour:
@@ -1656,13 +1656,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4 + 3 + 3
+  m_Text: 1 + 2 + 3 + 4
 --- !u!222 &1256792722
 CanvasRenderer:
   m_ObjectHideFlags: 0
