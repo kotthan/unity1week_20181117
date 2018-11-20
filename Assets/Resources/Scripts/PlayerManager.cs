@@ -18,9 +18,15 @@ public class PlayerManager : MonoBehaviour {
 
     private MOVE_DIR moveDirection = MOVE_DIR.STOP; //移動方向
 
+    private GameObject _burret;
+    private float _shotDelay = 0.1f;
+    private Transform _tf;
+
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
+        _tf = this.transform;
+        StartCoroutine(ShotBurret());
 	}
 	
 	// Update is called once per frame
@@ -75,6 +81,17 @@ public class PlayerManager : MonoBehaviour {
     public void ReleaseMoveButton() {
         moveDirection = MOVE_DIR.STOP;
         usingButtons = true;
+    }
+
+    IEnumerator ShotBurret() {
+        while (true) {
+            Shot();
+            yield return new WaitForSeconds(_shotDelay);
+        }
+    }
+
+    private void Shot () {
+        Instantiate(_burret, _tf.position, _tf.rotation);
     }
 
 }
