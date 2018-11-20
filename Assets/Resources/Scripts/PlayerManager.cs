@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour {
     private const float MOVE_SPEED = 100; //移動速度固定
     private float moveSpeed;            //移動速度
     private bool usingButtons = false;  //ボタンを押しているか
+    public GameObject burret;
+    private Transform tf;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
+        tf = this.transform;
 	}
 	
 	// Update is called once per frame
@@ -38,7 +41,7 @@ public class PlayerManager : MonoBehaviour {
                 }
             }
             if (Input.GetKeyDown("space")) {
-                //スペースで行う処理
+                Shot();
             }
         }
 	}
@@ -78,4 +81,7 @@ public class PlayerManager : MonoBehaviour {
         usingButtons = true;
     }
 
+    public void Shot() {
+        Instantiate(burret, tf.position, tf.rotation);
+    }
 }

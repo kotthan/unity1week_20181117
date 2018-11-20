@@ -21,7 +21,7 @@ public class PlayerBurretManager : MonoBehaviour
         // ここ追加②。プールへの参照を保存しておく
         //_pool = GameObject.Find("pool").GetComponent<BurretPool>();
         // 弾を打つコルーチンを呼び出す
-        StartCoroutine(ShotBurret());
+        //StartCoroutine(ShotBurret());
     }
 
     IEnumerator ShotBurret()
