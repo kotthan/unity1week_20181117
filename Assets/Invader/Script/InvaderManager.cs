@@ -18,10 +18,10 @@ public class InvaderManager : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision enter");
+        //Debug.Log("collision enter");
         if (collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("Destroy");
+            //Debug.Log("Destroy");
             Destroy(this.gameObject);
         }
     }

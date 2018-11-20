@@ -38,4 +38,13 @@ public class BurretManager : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("collision enter");
+        if (collision.gameObject.tag == "Invader")
+        {
+            //Debug.Log("Destroy");
+            Destroy(this.gameObject);
+        }
+    }
 }
