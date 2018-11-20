@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 32140944}
   - component: {fileID: 32140943}
   - component: {fileID: 32140945}
+  - component: {fileID: 32140946}
   m_Layer: 5
   m_Name: ImagePlayer
   m_TagString: Untagged
@@ -241,6 +242,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &32140946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32140939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1c50baafa744220a3d15affce9f99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _burret: {fileID: 1669033111084854, guid: 5e3962a96f84442209aaa843eda8eb7b, type: 2}
+  _shotDelay: 0.1
+  _tf: {fileID: 0}
 --- !u!1 &95504132
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +905,7 @@ RectTransform:
   - {fileID: 95504133}
   - {fileID: 1212019402}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1057,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050739789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1138,7 +1153,7 @@ Transform:
   - {fileID: 122476476}
   - {fileID: 566172835}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180643267
 GameObject:
@@ -1531,13 +1546,54 @@ RectTransform:
   - {fileID: 1949157588}
   - {fileID: 977299539}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1318730679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318730681}
+  - component: {fileID: 1318730680}
+  m_Layer: 0
+  m_Name: BurretPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1318730680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318730679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc6a8f2dfcee44df8aac20a9cbf6494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolObj: {fileID: 1669033111084854, guid: 5e3962a96f84442209aaa843eda8eb7b, type: 2}
+--- !u!4 &1318730681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318730679}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331282605
 GameObject:
   m_ObjectHideFlags: 0
