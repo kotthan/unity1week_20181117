@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour {
     private bool usingButtons = false;  //ボタンを押しているか
     public GameObject burret;
     private Transform tf;
+    private GameObject bulletInstance;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -82,6 +83,8 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void Shot() {
-        Instantiate(burret, tf.position, tf.rotation);
+        if (bulletInstance == null) {
+            bulletInstance = Instantiate(burret, tf.position, tf.rotation);
+        }
     }
 }
