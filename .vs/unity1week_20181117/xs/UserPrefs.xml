@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{54961122-9E43-EC6A-0419-40829CD3127A}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Scripts/BulletManager01.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerManager.cs" Line="25" Column="15" />
+      <File FileName="Assets/Scripts/PlayerManager.cs" Line="58" Column="19" />
+      <File FileName="Assets/Resources/Scripts/BulletManager.cs" Line="13" Column="27" />
+      <File FileName="Assets/Resources/Scripts/BulletManager01.cs" Line="10" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
