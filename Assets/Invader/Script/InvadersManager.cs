@@ -8,7 +8,8 @@ public class InvadersManager : MonoBehaviour
     public float interval;      //移動間隔
     public Vector2 move;        //移動量
     public Vector2 distance;    //invader間の距離
-    public int col;        //初期生成列数
+    public Vector2 offset;      //初期配置オフセット
+    public int col;             //初期生成列数
     public int row;
     public GameObject invaderPrefab;
 
@@ -19,9 +20,9 @@ public class InvadersManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Vector3 pos = new Vector3( -400f, 700f );
+        Vector3 pos = new Vector3( offset.x, offset.y );
         for (int i = 0; i < row; i++ ){
-            pos = new Vector3(-400f, pos.y);
+            pos = new Vector3( offset.x, pos.y );
             for (int j = 0; j < col; j++ ){
                 var invader = Instantiate(invaderPrefab, transform);
                 invader.transform.localPosition = pos;
