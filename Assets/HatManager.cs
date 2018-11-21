@@ -7,6 +7,7 @@ public class HatManager : MonoBehaviour {
     public float speed;
 
     private CalcSystemManager calc;
+    private ScoreManager score;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,9 @@ public class HatManager : MonoBehaviour {
         var calcSystem = GameObject.Find("CalcSystem");
         calc = calcSystem.GetComponent<CalcSystemManager>();
 
+        var scoreManager = GameObject.Find("ScoreManager");
+        score = scoreManager.GetComponent<ScoreManager>();
+
         GetComponent<Rigidbody2D>().velocity = tr * speed;
 	}
 	
@@ -35,7 +39,8 @@ public class HatManager : MonoBehaviour {
         //Debug.Log("collision enter");
         if (collision.gameObject.tag == "Bullet")
         {
-            calc.AddNum(-1);
+            calc.AddNum(0);
+            score.Add(20);
             //Debug.Log("Destroy");
             Destroy(this.gameObject);
         }

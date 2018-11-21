@@ -1018,6 +1018,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
+        type: 2}
+      propertyPath: col
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e5fd527fc6648bfa3d1f3e25f68404, type: 2}
   m_IsPrefabAsset: 0
@@ -1519,6 +1524,16 @@ Prefab:
     - target: {fileID: 1219157518393406, guid: 62e2c91a46b6b43a78528403b0f3b46e, type: 2}
       propertyPath: m_Name
       value: HatController
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862347124751836, guid: 62e2c91a46b6b43a78528403b0f3b46e,
+        type: 2}
+      propertyPath: minInterval
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862347124751836, guid: 62e2c91a46b6b43a78528403b0f3b46e,
+        type: 2}
+      propertyPath: maxInterval
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e2c91a46b6b43a78528403b0f3b46e, type: 2}
