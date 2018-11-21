@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7c44a6fb7e4704aa5874ee9f34da06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minInterval: 30
-  maxInterval: 60
+  minInterval: 20
+  maxInterval: 40
   HatPrefab: {fileID: 1185305040646856, guid: 0b4413a0da810433dafe643fd5e4b4ae, type: 2}
-  position: {x: 700, y: 700}
+  position: {x: 700, y: 500}
