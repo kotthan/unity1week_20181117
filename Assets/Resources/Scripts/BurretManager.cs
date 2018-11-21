@@ -6,7 +6,7 @@ using UnityEngine;
 public class BurretManager : MonoBehaviour
 {
 
-    private const int SPEED = 500; //弾の速さ
+    private const int SPEED = 1100; //弾の速さ
     private float _screenTop; // 画面の一番上のy座標。画面外かどうかの判定に使用
 
     private Rigidbody2D _rb;

@@ -89,18 +89,22 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
+
     //衝突処理
-    private void OnTriggerEnter2D(Collider2D col)
+   /*
+      private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Invader") {
             gameManager.GetComponent<GameManager>().GameOver();
             DestroyPlayer();
         }
     }
+    */
 
     //プレイヤーオブジェクト削除処理
-    void DestroyPlayer() {
+    public void DestroyPlayer() {
         Destroy(this.gameObject);
     }
+
 
 }
