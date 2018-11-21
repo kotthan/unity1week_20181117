@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textCalc: {fileID: 1256792719}
+  scoreManagerObj: {fileID: 1158348908}
 --- !u!4 &1133422479
 Transform:
   m_ObjectHideFlags: 0

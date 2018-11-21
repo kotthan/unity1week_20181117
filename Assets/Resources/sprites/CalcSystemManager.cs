@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class CalcSystemManager : MonoBehaviour {
 
     public GameObject textCalc;
+    public GameObject scoreManagerObj;
 
     private Text formula;
     private int result = 0;
+    private ScoreManager score;
 
 	// Use this for initialization
 	void Start () {
         formula = textCalc.GetComponent<Text>();
         CalcClear();
+        score = scoreManagerObj.GetComponent<ScoreManager>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +43,7 @@ public class CalcSystemManager : MonoBehaviour {
     }
     void Equal10 () {
         formula.text += " = 10";
+        score.Add(10);
     }
 
     void Over10 () {
