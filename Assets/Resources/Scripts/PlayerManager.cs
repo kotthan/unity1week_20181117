@@ -92,7 +92,7 @@ public class PlayerManager : MonoBehaviour {
     //衝突処理
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Trap") {
+        if (col.gameObject.tag == "Invader") {
             gameManager.GetComponent<GameManager>().GameOver();
             DestroyPlayer();
         }

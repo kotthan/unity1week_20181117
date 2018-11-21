@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455d483231e154505ac0180dd8c1bef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 1.5
+  interval: 0.5
   move: {x: 40, y: 80}
   distance: {x: 80, y: 80}
   offset: {x: -400, y: 500}
