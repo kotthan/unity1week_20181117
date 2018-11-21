@@ -6,6 +6,7 @@ public class InvaderManager : MonoBehaviour {
 
     private int value;
     CalcSystemManager calc;
+    ScoreManager score;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,9 @@ public class InvaderManager : MonoBehaviour {
         GetComponent<TextMesh>().text = value.ToString();
         var calcSystem = GameObject.Find("CalcSystem");
         calc = calcSystem.GetComponent<CalcSystemManager>();
+
+        var scoreManager = GameObject.Find("ScoreManager");
+        score = scoreManager.GetComponent<ScoreManager>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +29,7 @@ public class InvaderManager : MonoBehaviour {
         if (collision.gameObject.tag == "Bullet")
         {
             calc.AddNum(value);
+            score.Add(value);
             //Debug.Log("Destroy");
             Destroy(this.gameObject);
         }
