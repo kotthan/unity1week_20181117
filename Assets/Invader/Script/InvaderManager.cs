@@ -28,10 +28,12 @@ public class InvaderManager : MonoBehaviour {
         //Debug.Log("collision enter");
         if (collision.gameObject.tag == "Bullet")
         {
+            //Debug.Log("Destroy");
+            var parent = transform.parent.gameObject;
+            Debug.Log(parent);
+            parent.GetComponent<InvadersManager>().AddDestroyList(gameObject);
             calc.AddNum(value);
             score.Add(value);
-            //Debug.Log("Destroy");
-            Destroy(this.gameObject);
         }
     }
 }

@@ -8,11 +8,13 @@ public class CalcSystemManager : MonoBehaviour {
     public GameObject textCalc;
     public GameObject scoreManagerObj;
     public GameObject lifeManagerObj;
+    public GameObject invadersObj;
 
     private Text formula;
     private int result = 0;
     private ScoreManager score;
     private LifeManager life;
+    private InvadersManager invaders;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,7 @@ public class CalcSystemManager : MonoBehaviour {
         CalcClear();
         score = scoreManagerObj.GetComponent<ScoreManager>();
         life = lifeManagerObj.GetComponent<LifeManager>();
+        invaders = invadersObj.GetComponent<InvadersManager>();
 	}
 	
 	// Update is called once per frame
@@ -53,11 +56,13 @@ public class CalcSystemManager : MonoBehaviour {
     void Equal10 () {
         formula.text += " = 10";
         score.Add(10);
+        invaders.DestroyList();
     }
 
     void Over10 () {
         formula.text += " = " + result;
         life.Dead();
+        invaders.RevivalList();
     }
 
     void CalcClear() {

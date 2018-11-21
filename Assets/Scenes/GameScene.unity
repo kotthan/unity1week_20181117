@@ -1570,6 +1570,7 @@ MonoBehaviour:
   textCalc: {fileID: 1256792719}
   scoreManagerObj: {fileID: 1158348908}
   lifeManagerObj: {fileID: 1489795026}
+  invadersObj: {fileID: 1927722885}
 --- !u!4 &1133422479
 Transform:
   m_ObjectHideFlags: 0
@@ -2603,6 +2604,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927308683}
   m_CullTransparentMesh: 0
+--- !u!1 &1927722885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829011486196728, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
+    type: 2}
+  m_PrefabInternal: {fileID: 659843984}
 --- !u!1 &1933522953
 GameObject:
   m_ObjectHideFlags: 0

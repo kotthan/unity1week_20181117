@@ -16,6 +16,7 @@ public class InvadersManager : MonoBehaviour
     private float timer = 0;    //移動からの経過時間
     private bool downFlg = false;
     private bool moveRight = true;
+    List<GameObject> destroyInvaders = new List<GameObject> { };
 
     // Use this for initialization
     void Start()
@@ -85,5 +86,25 @@ public class InvadersManager : MonoBehaviour
 
     public void downDetect(){
         downFlg = true;
+    }
+
+    public void AddDestroyList (GameObject invader){
+        invader.SetActive(false);
+        destroyInvaders.Add(invader);
+    }
+
+    public void DestroyList(){
+        foreach ( GameObject obj in destroyInvaders ){
+            Destroy(obj);
+        }
+        destroyInvaders.Clear();
+    }
+
+    public void RevivalList(){
+        foreach (GameObject obj in destroyInvaders)
+        {
+            obj.SetActive(true);
+        }
+        destroyInvaders.Clear();
     }
 }
