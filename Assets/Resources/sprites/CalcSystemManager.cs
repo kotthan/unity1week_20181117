@@ -32,7 +32,13 @@ public class CalcSystemManager : MonoBehaviour {
             formula.text += " + ";
         }
         formula.text += num;
-        result += num;
+        if( num == 0 ){
+            //UFO
+            result = 10;
+        }
+        else{
+            result += num;
+        }
         Debug.Log("+ " + num + "= " + result );
         if( result == 10 ){
             Equal10();
