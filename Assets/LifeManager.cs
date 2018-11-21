@@ -10,6 +10,8 @@ public class LifeManager : MonoBehaviour {
     public int maxLife;
     public Vector2 basePos;
     public float dist;
+    public GameObject player;
+    public GameObject gamaManager;
 
     private int life;
     private List<GameObject> lifeIcons;
@@ -36,7 +38,8 @@ public class LifeManager : MonoBehaviour {
         life -= 1;
         lifeText.GetComponent<Text>().text = life.ToString();
         if (life <= 0) {
-
+            Destroy(player);
+            gamaManager.GetComponent<GameManager>().GameOver();
         }
         else {
             var icon = lifeIcons[lifeIcons.Count - 1];
