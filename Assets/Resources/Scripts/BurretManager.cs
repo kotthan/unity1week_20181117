@@ -41,7 +41,8 @@ public class BurretManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("collision enter");
-        if (collision.gameObject.tag == "Invader")
+        if ( (collision.gameObject.tag == "Invader") ||
+            (collision.gameObject.tag == "Hat" ) )
         {
             //Debug.Log("Destroy");
             Destroy(this.gameObject);

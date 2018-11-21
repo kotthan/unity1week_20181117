@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114302934803645734}
   m_Layer: 0
   m_Name: AcademicHat
-  m_TagString: Invader
+  m_TagString: Hat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
