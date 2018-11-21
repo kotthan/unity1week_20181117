@@ -32,9 +32,16 @@ public class LifeManager : MonoBehaviour {
 		
 	}
 
-    void Dead(){
+    public void Dead(){
         life -= 1;
-        Destroy( lifeIcons[lifeIcons.Count] );
         lifeText.GetComponent<Text>().text = life.ToString();
+        if (life <= 0) {
+
+        }
+        else {
+            var icon = lifeIcons[lifeIcons.Count - 1];
+            lifeIcons.Remove(icon);
+            Destroy(icon);
+        }
     }
 }

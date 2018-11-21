@@ -7,16 +7,19 @@ public class CalcSystemManager : MonoBehaviour {
 
     public GameObject textCalc;
     public GameObject scoreManagerObj;
+    public GameObject lifeManagerObj;
 
     private Text formula;
     private int result = 0;
     private ScoreManager score;
+    private LifeManager life;
 
 	// Use this for initialization
 	void Start () {
         formula = textCalc.GetComponent<Text>();
         CalcClear();
         score = scoreManagerObj.GetComponent<ScoreManager>();
+        life = lifeManagerObj.GetComponent<LifeManager>();
 	}
 	
 	// Update is called once per frame
@@ -54,6 +57,7 @@ public class CalcSystemManager : MonoBehaviour {
 
     void Over10 () {
         formula.text += " = " + result;
+        life.Dead();
     }
 
     void CalcClear() {
