@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour {
     public GameObject burret;
     private Transform tf;
     private GameObject bulletInstance;
+    public GameObject gameManager;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -87,4 +88,19 @@ public class PlayerManager : MonoBehaviour {
             bulletInstance = Instantiate(burret, tf.position, tf.rotation);
         }
     }
+
+    //衝突処理
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Invader") {
+            gameManager.GetComponent<GameManager>().GameOver();
+            DestroyPlayer();
+        }
+    }
+
+    //プレイヤーオブジェクト削除処理
+    void DestroyPlayer() {
+        Destroy(this.gameObject);
+    }
+
 }
