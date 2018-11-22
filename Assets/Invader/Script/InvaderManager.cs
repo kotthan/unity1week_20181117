@@ -31,9 +31,9 @@ public class InvaderManager : MonoBehaviour {
             //Debug.Log("Destroy");
             var parent = transform.parent.gameObject;
             Debug.Log(parent);
+            score.Add(value);
             parent.GetComponent<InvadersManager>().AddDestroyList(gameObject);
             calc.AddNum(value);
-            score.Add(value);
         }
     }
 }
