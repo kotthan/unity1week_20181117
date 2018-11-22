@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public GameObject ButtonsGameover;      //操作ボタン
     public GameObject InvadersController;   //インベーダーコントローラ
     public GameObject ScoreManager;
+    public GameObject TextCalculationVariable;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour {
         textGameOver.SetActive(true);
         ButtonsGameover.SetActive(true);
         InvadersController.SetActive(false);
+        TextCalculationVariable.SetActive(false);
+
         // Type == Number の場合
         naichilab.RankingLoader.Instance.SendScoreAndShowRanking(scoreManager.score);
 
