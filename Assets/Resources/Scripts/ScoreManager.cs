@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour {
     public GameObject textHiscoreObj;
     private Text textScore;
     private Text textHiscore;
-    private int score;
+    public int score;
     private int hiscore;
     private string key = "Hiscore";
 
