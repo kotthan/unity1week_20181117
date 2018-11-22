@@ -12,25 +12,30 @@ public class InvadersManager : MonoBehaviour
     public int col;             //初期生成列数
     public int row;
     public GameObject invaderPrefab;
+    public GameObject gameManager;
 
     private float timer = 0;    //移動からの経過時間
     private bool downFlg = false;
     private bool moveRight = true;
     List<GameObject> destroyInvaders = new List<GameObject> { };
+    private int count;
 
     // Use this for initialization
     void Start()
     {
         Vector3 pos = new Vector3( offset.x, offset.y );
+        count = 0;
         for (int i = 0; i < row; i++ ){
             pos = new Vector3( offset.x, pos.y );
             for (int j = 0; j < col; j++ ){
                 var invader = Instantiate(invaderPrefab, transform);
                 invader.transform.localPosition = pos;
                 pos = new Vector3(pos.x + distance.x, pos.y);
+                count++;
             }
             pos = new Vector3(pos.x, pos.y - distance.y);
         }
+        Debug.Log("All Invaders"+count);
     }
 
     // Update is called once per frame
@@ -90,6 +95,8 @@ public class InvadersManager : MonoBehaviour
 
     public void AddDestroyList (GameObject invader){
         invader.SetActive(false);
+        count -= 1;
+        Debug.Log("invaders:" + count);
         destroyInvaders.Add(invader);
     }
 
@@ -98,6 +105,9 @@ public class InvadersManager : MonoBehaviour
             Destroy(obj);
         }
         destroyInvaders.Clear();
+        if( count == 0 ){
+            gameManager.GetComponent<GameManager>().GameClear();
+        }
     }
 
     public void RevivalList(){

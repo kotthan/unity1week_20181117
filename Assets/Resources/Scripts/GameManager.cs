@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public GameObject textGameOver;         //「ゲームオーバー」テキスト
+    public GameObject textGameClear;         //「ゲームオーバー」テキスト
     public GameObject ButtonsGameover;      //操作ボタン
     public GameObject InvadersController;   //インベーダーコントローラ
     public GameObject ScoreManager;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void GameClear(){
+        textGameClear.SetActive(true);
+    }
 
     //ゲームオーバー処理
     public void GameOver() {
