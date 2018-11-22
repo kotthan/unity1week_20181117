@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour {
 
     public void GameClear(){
         textGameClear.SetActive(true);
+        ScoreManager.GetComponent<ScoreManager>().SaveScore();
+        Invoke("Restart", 1.0f);
     }
 
     //ゲームオーバー処理
