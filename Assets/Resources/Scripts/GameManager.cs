@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public GameObject InvadersController;   //インベーダーコントローラ
     public GameObject ScoreManager;
     public GameObject TextCalculationVariable;
+    public GameObject lifeManager;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
     public void GameClear(){
         textGameClear.SetActive(true);
         ScoreManager.GetComponent<ScoreManager>().SaveScore();
+        lifeManager.GetComponent<LifeManager>().Save();
         Invoke("Restart", 1.0f);
     }
 

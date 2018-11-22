@@ -836,6 +836,7 @@ MonoBehaviour:
   InvadersController: {fileID: 1696481886}
   ScoreManager: {fileID: 1158348908}
   TextCalculationVariable: {fileID: 1256792719}
+  lifeManager: {fileID: 1489795026}
 --- !u!4 &517084399
 Transform:
   m_ObjectHideFlags: 0

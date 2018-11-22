@@ -15,13 +15,16 @@ public class LifeManager : MonoBehaviour {
 
     private int life;
     private List<GameObject> lifeIcons;
+    private string key = "life";
 
 	// Use this for initialization
-	void Start () {
-        life = maxLife;
+    void Start () {
+        life = PlayerPrefs.GetInt(key, maxLife);
+        PlayerPrefs.SetInt(key, maxLife);
+        Debug.Log("Life load" + life);
         lifeText.GetComponent<Text>().text = life.ToString();
         lifeIcons = new List<GameObject>{};
-        for (int i = 0; i < maxLife - 1; i++ ){
+        for (int i = 0; i < life - 1; i++ ){
             var pos = new Vector3(dist * i + basePos.x, basePos.y);
             var q = new Quaternion();
             var icon = Instantiate(lifePrefab,pos,q);
@@ -46,5 +49,10 @@ public class LifeManager : MonoBehaviour {
             lifeIcons.Remove(icon);
             Destroy(icon);
         }
+    }
+
+    public void Save(){
+        Debug.Log("Life save"+life);
+        PlayerPrefs.SetInt(key, life);
     }
 }
