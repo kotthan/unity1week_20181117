@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
 
     private Rigidbody2D rbody;          //プレイヤー制御用
-    private const float MOVE_SPEED = 100; //移動速度固定
+    private const float MOVE_SPEED = 300; //移動速度固定
     private float moveSpeed;            //移動速度
     private bool usingButtons = false;  //ボタンを押しているか
     public GameObject burret;
