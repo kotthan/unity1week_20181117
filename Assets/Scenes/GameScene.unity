@@ -439,7 +439,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESTART
+  m_Text: 'RESTART !
+
+    PUSH ANY KEY!'
 --- !u!222 &203324023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -832,6 +834,7 @@ MonoBehaviour:
   ButtonsGameover: {fileID: 228526638}
   InvadersController: {fileID: 1696481886}
   ScoreManager: {fileID: 1158348908}
+  TextCalculationVariable: {fileID: 1256792719}
 --- !u!4 &517084399
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,12 +1102,12 @@ Prefab:
     - target: {fileID: 61923317079532616, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: m_Offset.x
-      value: 600
+      value: 575
       objectReference: {fileID: 0}
     - target: {fileID: 61982895229386716, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: m_Offset.x
-      value: -600
+      value: -575
       objectReference: {fileID: 0}
     - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
@@ -2670,7 +2673,7 @@ Transform:
   m_GameObject: {fileID: 1791384282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -520, z: -60}
-  m_LocalScale: {x: 720, y: 3.3333335, z: 0.6666667}
+  m_LocalScale: {x: 790, y: 3.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1271642591}
   m_RootOrder: 4
@@ -2951,7 +2954,7 @@ Transform:
   m_GameObject: {fileID: 1949157587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: -503, z: -60}
-  m_LocalScale: {x: 666.66675, y: 3.3333335, z: 0.6666667}
+  m_LocalScale: {x: 1000, y: 3.3333335, z: 0.6666667}
   m_Children: []
   m_Father: {fileID: 1271642591}
   m_RootOrder: 9
@@ -3038,6 +3041,7 @@ GameObject:
   - component: {fileID: 1968863175}
   - component: {fileID: 1968863174}
   - component: {fileID: 1968863173}
+  - component: {fileID: 1968863176}
   m_Layer: 5
   m_Name: ButtonRestart
   m_TagString: Untagged
@@ -3061,8 +3065,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 300, y: 150}
+  m_AnchoredPosition: {x: 0, y: -202}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968863173
 MonoBehaviour:
@@ -3150,6 +3154,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1968863171}
   m_CullTransparentMesh: 0
+--- !u!114 &1968863176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968863171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1af5068d67bf4d7f9db02fcb4715bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 517084397}
 --- !u!4 &2032297408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4647343189256036, guid: 62e2c91a46b6b43a78528403b0f3b46e,
