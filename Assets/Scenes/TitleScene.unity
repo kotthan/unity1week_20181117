@@ -591,7 +591,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228526638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -703,6 +703,8 @@ MonoBehaviour:
   textGameOver: {fileID: 675765439}
   ButtonsGameover: {fileID: 228526638}
   InvadersController: {fileID: 1696481886}
+  ScoreManager: {fileID: 0}
+  TextCalculationVariable: {fileID: 0}
 --- !u!4 &517084399
 Transform:
   m_ObjectHideFlags: 0
@@ -786,7 +788,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -876,6 +878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minInterval: 30
   maxInterval: 60
+  HatPrefab: {fileID: 0}
+  position: {x: 0, y: 0}
 --- !u!4 &571622686
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1245,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696712047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1490,7 +1494,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050739788}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1564,6 +1568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textCalc: {fileID: 1256792719}
+  scoreManagerObj: {fileID: 0}
+  lifeManagerObj: {fileID: 0}
+  invadersObj: {fileID: 0}
 --- !u!4 &1133422479
 Transform:
   m_ObjectHideFlags: 0

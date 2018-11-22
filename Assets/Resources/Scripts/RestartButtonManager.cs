@@ -5,7 +5,8 @@ using UnityEngine;
 public class RestartButtonManager : MonoBehaviour {
 
     public GameObject gameManager;
-
+    private bool CanRestart = false;
+    private bool ChangeFlg = false;
     private bool usingButtons = false;
 
 
@@ -16,12 +17,15 @@ public class RestartButtonManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
-        if (!GameObject.Find("RankingSceneManager")) {
-            if (Input.anyKey) {
-                gameManager.GetComponent<GameManager>().Restart();
-            }
+        if (GameObject.Find("RankingSceneManager") == true ) {
+            ChangeFlg = true;
+        } else if ((GameObject.Find("RankingSceneManager") == false) && (ChangeFlg == true)) {
+            CanRestart = true;
         }
-		
-	}
+
+        if ((Input.anyKey) && (CanRestart == true))
+        {
+            gameManager.GetComponent<GameManager>().Restart();
+        }
+    }
 }
