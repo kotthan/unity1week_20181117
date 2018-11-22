@@ -6,6 +6,8 @@ public class HatControllerManager : MonoBehaviour {
 
     public float minInterval;
     public float maxInterval;
+    public GameObject HatPrefab;
+    public Vector2 position;
 
     private float interval;
     private float time;
@@ -26,7 +28,22 @@ public class HatControllerManager : MonoBehaviour {
         if( time > interval)
         {
             Debug.Log("Hat!"+time);
+            CreateHat();
             SetTimer();
         }
 	}
+
+    void CreateHat(){
+        Vector3 pos;
+        //左右どっち側に作るか
+        if ( Random.Range(0, 2) == 0 ){
+            pos = new Vector3(position.x,position.y);
+        }
+        else {
+            pos = new Vector3(-position.x, position.y);
+        }
+
+        var q = new Quaternion();
+        Instantiate(HatPrefab, pos, q);
+    }
 }
