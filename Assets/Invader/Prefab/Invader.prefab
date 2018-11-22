@@ -166,3 +166,5 @@ MonoBehaviour:
   - 3
   - 2
   - 1
+  InvaderExplosion: {fileID: 1535366200265314, guid: ac6b94c028ab44d98a51638e90261e1a,
+    type: 2}

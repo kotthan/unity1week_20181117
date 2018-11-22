@@ -8,9 +8,11 @@ public class InvaderManager : MonoBehaviour {
     private int value;
     CalcSystemManager calc;
     ScoreManager score;
+    private GameObject ExplosionInstance;
+    public GameObject InvaderExplosion;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         SetValue();
         GetComponent<TextMesh>().text = value.ToString();
         var calcSystem = GameObject.Find("CalcSystem");
@@ -30,6 +32,7 @@ public class InvaderManager : MonoBehaviour {
         if (collision.gameObject.tag == "Bullet")
         {
             //Debug.Log("Destroy");
+            Explosion();
             var parent = transform.parent.gameObject;
             Debug.Log(parent);
             score.Add(value);
@@ -53,4 +56,22 @@ public class InvaderManager : MonoBehaviour {
             }
         }
     }
+
+    void Explosion() {
+        ExplosionInstance = Instantiate(InvaderExplosion, transform.position, transform.rotation);
+        DestroyStart();
+    }
+
+    void DestroyStart()
+    {
+        //DelayMethodを3.5秒後に呼び出す
+        Invoke("DelayMethod", 0.3f);
+    }
+
+    void DelayMethod()
+    {
+        Destroy(ExplosionInstance);
+        Debug.Log("Delay call");
+    }
+
 }
