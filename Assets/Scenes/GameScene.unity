@@ -831,7 +831,6 @@ MonoBehaviour:
   textGameOver: {fileID: 675765439}
   ButtonsGameover: {fileID: 228526638}
   InvadersController: {fileID: 1696481886}
-  ScoreManager: {fileID: 1158348908}
 --- !u!4 &517084399
 Transform:
   m_ObjectHideFlags: 0
