@@ -12,8 +12,11 @@ public class TitleSceneManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.anyKey)
+        {
+            LoadGameScene();
+        }
+    }
 
     public void LoadGameScene(){
         SceneManager.LoadScene("GameScene");
