@@ -1102,17 +1102,17 @@ Prefab:
     - target: {fileID: 61923317079532616, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: m_Offset.x
-      value: 575
+      value: 570
       objectReference: {fileID: 0}
     - target: {fileID: 61982895229386716, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: m_Offset.x
-      value: -575
+      value: -570
       objectReference: {fileID: 0}
     - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: distance.x
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 1435720846947796, guid: 89e5fd527fc6648bfa3d1f3e25f68404, type: 2}
       propertyPath: m_IsActive
@@ -1121,12 +1121,12 @@ Prefab:
     - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: col
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
         type: 2}
       propertyPath: interval
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e5fd527fc6648bfa3d1f3e25f68404, type: 2}
