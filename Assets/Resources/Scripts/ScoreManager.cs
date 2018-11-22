@@ -12,11 +12,14 @@ public class ScoreManager : MonoBehaviour {
     public int score;
     private int hiscore;
     private string key = "Hiscore";
+    private string scoreKey = "score";
 
 	// Use this for initialization
 	void Start () {
-        score = 0;
+        score = PlayerPrefs.GetInt(scoreKey, 0);
+        PlayerPrefs.SetInt(scoreKey, 0);
         textScore = textScoreObj.GetComponent<Text>();
+        textScore.text = string.Format("{0:00000}", score);
         hiscore = PlayerPrefs.GetInt(key, 0);
         Debug.Log("hiscoe read" + hiscore);
         textHiscore = textHiscoreObj.GetComponent<Text>();
@@ -39,6 +42,11 @@ public class ScoreManager : MonoBehaviour {
             Debug.Log("hiscoe up" + hiscore);
             textHiscore.text = string.Format("{0:00000}", hiscore);
         }
+    }
+
+    public void SaveScore(){
+        Debug.Log("saveScore" + score);
+        PlayerPrefs.SetInt(scoreKey, score);
     }
 
 }
