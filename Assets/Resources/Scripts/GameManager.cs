@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     public GameObject textGameOver;         //「ゲームオーバー」テキスト
     public GameObject ButtonsGameover;      //操作ボタン
     public GameObject InvadersController;   //インベーダーコントローラ
-
+    public GameObject ScoreManager;
 
     // Use this for initialization
     void Start () {
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
     //ゲームオーバー処理
     public void GameOver() {
+        ScoreManager.GetComponent<ScoreManager>().CheckHiscore();
         textGameOver.SetActive(true);
         ButtonsGameover.SetActive(true);
         InvadersController.SetActive(false);

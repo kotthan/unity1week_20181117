@@ -831,6 +831,7 @@ MonoBehaviour:
   textGameOver: {fileID: 675765439}
   ButtonsGameover: {fileID: 228526638}
   InvadersController: {fileID: 1696481886}
+  ScoreManager: {fileID: 1158348908}
 --- !u!4 &517084399
 Transform:
   m_ObjectHideFlags: 0
@@ -1824,7 +1825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a341e938f043749bb946f37482109533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textScore: {fileID: 1741896012}
+  textScoreObj: {fileID: 1741896012}
+  textHiscoreObj: {fileID: 1758845493}
 --- !u!1 &1212019401
 GameObject:
   m_ObjectHideFlags: 0
