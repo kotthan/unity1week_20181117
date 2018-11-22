@@ -56,22 +56,8 @@ public class InvaderManager : MonoBehaviour {
             }
         }
     }
-
-    void Explosion() {
+    void Explosion()
+    {
         ExplosionInstance = Instantiate(InvaderExplosion, transform.position, transform.rotation);
-        DestroyStart();
     }
-
-    void DestroyStart()
-    {
-        //DelayMethodを3.5秒後に呼び出す
-        Invoke("DelayMethod", 0.3f);
-    }
-
-    void DelayMethod()
-    {
-        Destroy(ExplosionInstance);
-        Debug.Log("Delay call");
-    }
-
 }
