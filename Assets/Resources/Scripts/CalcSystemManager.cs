@@ -62,7 +62,8 @@ public class CalcSystemManager : MonoBehaviour {
     void Over10 () {
         formula.text += " = " + result;
         life.Dead();
-        invaders.RevivalList();
+        //invaders.RevivalList();
+        invaders.DestroyList();
     }
 
     void CalcClear() {
