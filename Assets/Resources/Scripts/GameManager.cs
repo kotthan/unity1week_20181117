@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public GameObject TextCalculationVariable;
     public GameObject lifeManager;
 
+    private bool isGameOver = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour {
 
     //ゲームオーバー処理
     public void GameOver() {
+        if ( isGameOver == true ){
+            return;
+        }
         var scoreManager = ScoreManager.GetComponent<ScoreManager>();
         scoreManager.CheckHiscore();
         textGameOver.SetActive(true);
