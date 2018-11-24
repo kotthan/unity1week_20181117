@@ -29,11 +29,10 @@ public class HatControllerManager : MonoBehaviour {
         {
             Debug.Log("Hat!"+time);
             CreateHat();
-            SetTimer();
         }
 	}
 
-    void CreateHat(){
+    public void CreateHat(){
         Vector3 pos;
         //左右どっち側に作るか
         if ( Random.Range(0, 2) == 0 ){
@@ -45,5 +44,6 @@ public class HatControllerManager : MonoBehaviour {
 
         var q = new Quaternion();
         Instantiate(HatPrefab, pos, q);
+        SetTimer();
     }
 }

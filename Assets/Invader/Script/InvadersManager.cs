@@ -13,16 +13,19 @@ public class InvadersManager : MonoBehaviour
     public int row;
     public GameObject invaderPrefab;
     public GameObject gameManager;
+    public GameObject hatController;
 
     private float timer = 0;    //移動からの経過時間
     private bool downFlg = false;
     private bool moveRight = true;
     List<GameObject> destroyInvaders = new List<GameObject> { };
     private int count;
+    private HatControllerManager hat;
 
     // Use this for initialization
     void Start()
     {
+        hat = hatController.GetComponent<HatControllerManager>();
         Vector3 pos = new Vector3( offset.x, offset.y );
         count = 0;
         for (int i = 0; i < row; i++ ){
@@ -96,6 +99,9 @@ public class InvadersManager : MonoBehaviour
     public void AddDestroyList (GameObject invader){
         invader.SetActive(false);
         count -= 1;
+        if( count == 0 ){
+            hat.CreateHat();
+        }
         Debug.Log("invaders:" + count);
         destroyInvaders.Add(invader);
     }

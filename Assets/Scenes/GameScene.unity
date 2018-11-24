@@ -1324,6 +1324,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 517084397}
+    - target: {fileID: 114743049036606198, guid: 89e5fd527fc6648bfa3d1f3e25f68404,
+        type: 2}
+      propertyPath: hatController
+      value: 
+      objectReference: {fileID: 882715601}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e5fd527fc6648bfa3d1f3e25f68404, type: 2}
   m_IsPrefabAsset: 0
@@ -1642,6 +1647,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 32140939}
   gameManager: {fileID: 517084397}
+--- !u!1 &882715601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1219157518393406, guid: 62e2c91a46b6b43a78528403b0f3b46e,
+    type: 2}
+  m_PrefabInternal: {fileID: 988854203}
 --- !u!1 &976179526
 GameObject:
   m_ObjectHideFlags: 0
