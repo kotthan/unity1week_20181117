@@ -39,8 +39,8 @@ public class HatManager : MonoBehaviour {
         //Debug.Log("collision enter");
         if (collision.gameObject.tag == "Bullet")
         {
-            calc.AddNum(0);
             score.Add(20);
+            calc.AddNum(0);
             //Debug.Log("Destroy");
             Destroy(this.gameObject);
         }
