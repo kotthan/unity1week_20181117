@@ -107,12 +107,22 @@ public class InvadersManager : MonoBehaviour
     }
 
     public void DestroyList(){
+        var result = 0;
         foreach ( GameObject obj in destroyInvaders ){
+            result += obj.GetComponent<InvaderManager>().GetValue();
             Destroy(obj);
         }
         destroyInvaders.Clear();
         if( count == 0 ){
-            gameManager.GetComponent<GameManager>().GameClear();
+            Debug.Log("result" + result);
+            if (result == 10)
+            {
+                gameManager.GetComponent<GameManager>().GameClear(true);
+            }
+            else
+            {
+                gameManager.GetComponent<GameManager>().GameClear(false);
+            }
         }
     }
 

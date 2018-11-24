@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject textGameOver;         //「ゲームオーバー」テキスト
     public GameObject textGameClear;         //「ゲームオーバー」テキスト
+    public GameObject textGamePerfect;         //「ゲームオーバー」テキスト
     public GameObject ButtonsGameover;      //操作ボタン
     public GameObject InvadersController;   //インベーダーコントローラ
     public GameObject ScoreManager;
@@ -25,9 +26,15 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-    public void GameClear(){
+    public void GameClear(bool isPerfect = false){
+        var Score = ScoreManager.GetComponent<ScoreManager>();
         textGameClear.SetActive(true);
-        ScoreManager.GetComponent<ScoreManager>().SaveScore();
+        if (isPerfect == true)
+        {
+            textGamePerfect.SetActive(true);
+            Score.Add(100);
+        }
+        Score.SaveScore();
         lifeManager.GetComponent<LifeManager>().Save();
         Invoke("Restart", 1.0f);
     }

@@ -60,4 +60,8 @@ public class InvaderManager : MonoBehaviour {
     {
         ExplosionInstance = Instantiate(InvaderExplosion, transform.position, transform.rotation);
     }
+
+    public int GetValue(){
+        return value;
+    }
 }
