@@ -6,6 +6,7 @@ public class InvadersManager : MonoBehaviour
 {
 
     public float interval;      //移動間隔
+    public float reduceInterval;
     public Vector2 move;        //移動量
     public Vector2 distance;    //invader間の距離
     public Vector2 offset;      //初期配置オフセット
@@ -103,6 +104,7 @@ public class InvadersManager : MonoBehaviour
             hat.CreateHat();
         }
         Debug.Log("invaders:" + count);
+        interval -= reduceInterval;
         destroyInvaders.Add(invader);
     }
 
