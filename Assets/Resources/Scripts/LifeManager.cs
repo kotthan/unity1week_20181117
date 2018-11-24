@@ -47,7 +47,7 @@ public class LifeManager : MonoBehaviour {
         else {
             var icon = lifeIcons[lifeIcons.Count - 1];
             lifeIcons.Remove(icon);
-            Destroy(icon);
+            icon.GetComponent<LifeIconMagager>().Destroy();
         }
     }
 

@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4567656927482526}
   - component: {fileID: 212745180441985066}
+  - component: {fileID: 114734000659255342}
+  - component: {fileID: 95392395735947828}
   m_Layer: 0
   m_Name: LifeIcon
   m_TagString: Untagged
@@ -40,6 +42,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95392395735947828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324270305922006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43080bee80dbd42dab4ebe3c9f656d1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114734000659255342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324270305922006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741467cb467e04e4ca0bcac6b9c3dac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brinkTime: 2
+  interval: 0
 --- !u!212 &212745180441985066
 SpriteRenderer:
   m_ObjectHideFlags: 1
