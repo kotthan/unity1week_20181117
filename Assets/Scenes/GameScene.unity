@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 32140944}
   - component: {fileID: 32140943}
   - component: {fileID: 32140945}
+  - component: {fileID: 32140946}
   m_Layer: 5
   m_Name: ImagePlayer
   m_TagString: Untagged
@@ -243,6 +244,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 200, y: 100}
   m_EdgeRadius: 0
+--- !u!95 &32140946
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32140939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31ccd42de82ec4fe6ae1c1317554cd2d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &95504132
 GameObject:
   m_ObjectHideFlags: 0

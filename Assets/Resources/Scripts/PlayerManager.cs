@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour {
     private Transform tf;
     private GameObject bulletInstance;
     public GameObject gameManager;
+    private Animator animator;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -25,6 +26,7 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        animator = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody2D>();
         tf = this.transform;
 	}
@@ -100,6 +102,10 @@ public class PlayerManager : MonoBehaviour {
         }
     }
     */
+
+    public void Damage(){
+        animator.SetTrigger("brink");
+    }
 
     //プレイヤーオブジェクト削除処理
     public void DestroyPlayer() {
