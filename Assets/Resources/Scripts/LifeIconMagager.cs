@@ -20,7 +20,7 @@ public class LifeIconMagager : MonoBehaviour {
 
     public void Destroy()
     {
-        animator.SetBool("brink",true);
+        animator.SetTrigger("brink");
         Destroy(this.gameObject, brinkTime);
     }
 }
