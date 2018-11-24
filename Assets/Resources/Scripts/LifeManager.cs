@@ -39,7 +39,7 @@ public class LifeManager : MonoBehaviour {
 		
 	}
 
-    public void Dead(){
+    public int Dead(){
         life -= 1;
         lifeText.GetComponent<Text>().text = life.ToString();
         if (life <= 0) {
@@ -52,6 +52,7 @@ public class LifeManager : MonoBehaviour {
             icon.GetComponent<LifeIconMagager>().Destroy();
             player.Damage();
         }
+        return life;
     }
 
     public void Save(){

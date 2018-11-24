@@ -70,9 +70,11 @@ public class CalcSystemManager : MonoBehaviour {
     void Over10 () {
         textCalc.SetActive(false);
         textOver10.SetActive(result);
-        life.Dead();
-        //invaders.RevivalList();
-        invaders.DestroyList();
+        var left = life.Dead();
+        if (left != 0) {
+            //invaders.RevivalList();
+            invaders.DestroyList();
+        }
     }
 
     void CalcClear() {
