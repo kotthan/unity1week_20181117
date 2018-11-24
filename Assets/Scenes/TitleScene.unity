@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burret: {fileID: 1943317996760428, guid: 5e3962a96f84442209aaa843eda8eb7b, type: 2}
   gameManager: {fileID: 517084397}
+  damageBack: {fileID: 0}
 --- !u!61 &32140945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -403,6 +404,7 @@ GameObject:
   - component: {fileID: 95504133}
   - component: {fileID: 95504135}
   - component: {fileID: 95504134}
+  - component: {fileID: 95504136}
   m_Layer: 5
   m_Name: TextCredit
   m_TagString: Untagged
@@ -470,6 +472,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95504132}
   m_CullTransparentMesh: 0
+--- !u!114 &95504136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95504132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fa14b681b7f402ca56e230cfbf9d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &122476475
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textGameOver: {fileID: 675765439}
   textGameClear: {fileID: 0}
+  textGamePerfect: {fileID: 0}
   ButtonsGameover: {fileID: 228526638}
   InvadersController: {fileID: 1696481886}
   ScoreManager: {fileID: 0}
@@ -1659,6 +1674,8 @@ MonoBehaviour:
   scoreManagerObj: {fileID: 0}
   lifeManagerObj: {fileID: 0}
   invadersObj: {fileID: 0}
+  textEqual10Obj: {fileID: 0}
+  textOver10Obj: {fileID: 0}
 --- !u!4 &1133422479
 Transform:
   m_ObjectHideFlags: 0
@@ -1863,7 +1880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1228781972
 SpriteRenderer:
   m_ObjectHideFlags: 0

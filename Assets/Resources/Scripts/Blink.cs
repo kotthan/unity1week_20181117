@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Blink : MonoBehaviour {
 
     //public
-    public float speed = 0.1f;
+    public float speed = 0.05f;
 
     //private
     private Text text;
