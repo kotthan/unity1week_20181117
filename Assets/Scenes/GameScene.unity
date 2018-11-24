@@ -2653,7 +2653,7 @@ MonoBehaviour:
   maxLife: 3
   basePos: {x: -400, y: -830}
   dist: 100
-  player: {fileID: 32140939}
+  playerObj: {fileID: 32140939}
   gamaManager: {fileID: 517084397}
 --- !u!1 &1622761960
 GameObject:
