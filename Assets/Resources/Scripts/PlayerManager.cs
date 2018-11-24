@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour {
     private GameObject bulletInstance;
     public GameObject gameManager;
     private Animator animator;
+    public GameObject damageBack;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -105,6 +106,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Damage(){
         animator.SetTrigger("brink");
+        Instantiate(damageBack);
     }
 
     //プレイヤーオブジェクト削除処理

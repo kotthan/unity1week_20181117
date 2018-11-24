@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burret: {fileID: 1943317996760428, guid: 5e3962a96f84442209aaa843eda8eb7b, type: 2}
   gameManager: {fileID: 517084397}
+  damageBack: {fileID: 1727761008920838, guid: c972af1c1ad534a8e9cf6183f3d871cd, type: 2}
 --- !u!61 &32140945
 BoxCollider2D:
   m_ObjectHideFlags: 0
