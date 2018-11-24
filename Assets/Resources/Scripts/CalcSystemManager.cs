@@ -9,20 +9,26 @@ public class CalcSystemManager : MonoBehaviour {
     public GameObject scoreManagerObj;
     public GameObject lifeManagerObj;
     public GameObject invadersObj;
+    public GameObject textEqual10Obj;
+    public GameObject textOver10Obj;
 
     private Text formula;
     private int result = 0;
     private ScoreManager score;
     private LifeManager life;
     private InvadersManager invaders;
+    private TextResultManager textEqual10;
+    private TextResultManager textOver10;
 
 	// Use this for initialization
 	void Start () {
         formula = textCalc.GetComponent<Text>();
-        CalcClear();
         score = scoreManagerObj.GetComponent<ScoreManager>();
         life = lifeManagerObj.GetComponent<LifeManager>();
         invaders = invadersObj.GetComponent<InvadersManager>();
+        textEqual10 = textEqual10Obj.GetComponent<TextResultManager>();
+        textOver10 = textOver10Obj.GetComponent<TextResultManager>();
+        CalcClear();
 	}
 	
 	// Update is called once per frame
@@ -55,13 +61,15 @@ public class CalcSystemManager : MonoBehaviour {
         }
     }
     void Equal10 () {
-        formula.text += " = 10";
+        textCalc.SetActive(false);
+        textEqual10.SetActive();
         score.Add(10);
         invaders.DestroyList();
     }
 
     void Over10 () {
-        formula.text += " = " + result;
+        textCalc.SetActive(false);
+        textOver10.SetActive(result);
         life.Dead();
         //invaders.RevivalList();
         invaders.DestroyList();
@@ -70,5 +78,8 @@ public class CalcSystemManager : MonoBehaviour {
     void CalcClear() {
         result = 0;
         formula.text = "";
+        textCalc.SetActive(true);
+        textOver10.SetDisactive();
+        textEqual10.SetDisactive();
     }
 }
