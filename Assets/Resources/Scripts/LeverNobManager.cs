@@ -5,11 +5,19 @@ using UnityEngine.EventSystems;
 
 public class LeverNobManager : MonoBehaviour {
 
+    public float moveThreshold;
+    public float moveMax;
+    public GameObject playerObj;
+    private PlayerManager playerMng;
+
     private Vector3 defPos;
+    private Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
         defPos = transform.position;
+        Debug.Log("def:"+defPos.ToString());
+        playerMng = playerObj.GetComponent<PlayerManager>();
 	}
 	
 	// Update is called once per frame
@@ -17,9 +25,43 @@ public class LeverNobManager : MonoBehaviour {
 		
 	}
 
+    private void OnMouseDown()
+    {
+        startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     public void OnMouseDrag()
     {
-        var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(pos.x, defPos.y, defPos.z);
+        var nowPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var pos = nowPos - startPos;
+        if( pos.x > moveMax )
+        {
+            pos = new Vector3(moveMax, pos.y, pos.z);
+        }
+        else if(pos.x < -moveMax)
+        {
+            pos = new Vector3(-moveMax, pos.y, pos.z);
+        }
+        transform.position = new Vector3(defPos.x+pos.x, defPos.y, defPos.z);
+
+        Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
+        if (pos.x > moveThreshold)
+        {
+            playerMng.PushRightButton();
+        }
+        else if (pos.x < -moveThreshold)
+        {
+            playerMng.PushLeftButton();
+        }
+        else
+        {
+            playerMng.ReleaseMoveButton();
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        Debug.Log("mouse Release");
+        playerMng.ReleaseMoveButton();
     }
 }

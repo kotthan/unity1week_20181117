@@ -220,6 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d30b7dde6ee4a3180470e22adcd6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveThreshold: 50
+  moveMax: 100
+  playerObj: {fileID: 0}
 --- !u!212 &212131504521991000
 SpriteRenderer:
   m_ObjectHideFlags: 1
