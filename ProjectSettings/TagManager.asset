@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Trap
   - Hat
+  - Touch
   layers:
   - Default
   - TransparentFX
