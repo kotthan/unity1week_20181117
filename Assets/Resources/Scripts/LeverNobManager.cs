@@ -24,7 +24,7 @@ public class LeverNobManager : MonoBehaviour {
 	void Update () {
 		
 	}
-
+#if true
     private void OnMouseDown()
     {
         startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -58,10 +58,68 @@ public class LeverNobManager : MonoBehaviour {
             playerMng.ReleaseMoveButton();
         }
     }
-
+#else
     private void OnMouseUp()
     {
         Debug.Log("mouse Release");
         playerMng.ReleaseMoveButton();
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var obj = collision.gameObject;
+        if (obj.tag == "Touch")
+        {
+            startPos = obj.transform.position;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        var obj = collision.gameObject;
+        if (obj.tag == "Touch")
+        {
+            TouchMove(obj.transform.position);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var obj = collision.gameObject;
+        if (obj.tag == "Touch")
+        {
+            playerMng.ReleaseMoveButton();
+        }
+    }
+
+    private void TouchMove(Vector3 newPos)
+    {
+        var pos = newPos - startPos;
+        if (pos.x > moveMax)
+        {
+            pos = new Vector3(moveMax, pos.y, pos.z);
+        }
+        else if (pos.x < -moveMax)
+        {
+            pos = new Vector3(-moveMax, pos.y, pos.z);
+        }
+        transform.position = new Vector3(defPos.x + pos.x, defPos.y, defPos.z);
+
+        Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
+        if (pos.x > moveThreshold)
+        {
+            playerMng.PushRightButton();
+        }
+        else if (pos.x < -moveThreshold)
+        {
+            playerMng.PushLeftButton();
+        }
+        else
+        {
+            playerMng.ReleaseMoveButton();
+        }
+    }
+#endif
+
 }
