@@ -12,6 +12,7 @@ public class LeverNobManager : MonoBehaviour {
 
     private Vector3 defPos;
     private Vector3 startPos;
+    private int fingerId = -1;
 
 	// Use this for initialization
 	void Start () {
@@ -19,21 +20,60 @@ public class LeverNobManager : MonoBehaviour {
         Debug.Log("def:"+defPos.ToString());
         playerMng = playerObj.GetComponent<PlayerManager>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-#if false
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+
+#if true
+    void CheckTouch()
+    {
+        if (Input.touchCount <= 0) { return; }
+        if (fingerId != -1 ) { return; }
+        foreach (Touch touch in Input.touches)
+        {
+            if ( touch.phase == TouchPhase.Began)
+            {
+                fingerId = touch.fingerId;
+                Debug.Log("finger" + fingerId);
+            }
+        }
+    }
+
     private void OnMouseDown()
     {
         startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        CheckTouch();
     }
 
     public void OnMouseDrag()
     {
-        var nowPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var pos = nowPos - startPos;
+        Vector3 newPos = Vector3.zero;
+        if (Input.touchCount > 0)
+        {
+            if (fingerId == -1) { return; }
+            var isTouch = false;
+            foreach (Touch touch in Input.touches)
+            {
+                if (fingerId == touch.fingerId)
+                {
+                    isTouch = true;
+                    newPos = Camera.main.ScreenToWorldPoint(touch.position);
+                    break;
+                }
+            }
+            if (isTouch == false)
+            {
+                fingerId = -1;
+                return;
+            }
+        }
+        else
+        {
+            newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        var pos = newPos - startPos;
         if( pos.x > moveMax )
         {
             pos = new Vector3(moveMax, pos.y, pos.z);
@@ -44,7 +84,7 @@ public class LeverNobManager : MonoBehaviour {
         }
         transform.position = new Vector3(defPos.x+pos.x, defPos.y, defPos.z);
 
-        Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
+        //Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
         if (pos.x > moveThreshold)
         {
             playerMng.PushRightButton();
@@ -63,6 +103,7 @@ public class LeverNobManager : MonoBehaviour {
     {
         Debug.Log("mouse Release");
         playerMng.ReleaseMoveButton();
+        fingerId = -1;
     }
 #else
 
@@ -106,6 +147,7 @@ public class LeverNobManager : MonoBehaviour {
         }
         transform.position = new Vector3(defPos.x + pos.x, defPos.y, defPos.z);
 
+        Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
         if (pos.x > moveThreshold)
         {
             playerMng.PushRightButton();
