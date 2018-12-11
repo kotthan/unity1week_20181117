@@ -24,7 +24,7 @@ public class LeverNobManager : MonoBehaviour {
 	void Update () {
 		
 	}
-#if true
+#if false
     private void OnMouseDown()
     {
         startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -58,13 +58,13 @@ public class LeverNobManager : MonoBehaviour {
             playerMng.ReleaseMoveButton();
         }
     }
-#else
+
     private void OnMouseUp()
     {
         Debug.Log("mouse Release");
         playerMng.ReleaseMoveButton();
     }
-
+#else
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
