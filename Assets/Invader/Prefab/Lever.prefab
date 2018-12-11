@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveThreshold: 50
-  moveMax: 100
+  moveMax: 200
   playerObj: {fileID: 0}
 --- !u!212 &212131504521991000
 SpriteRenderer:

@@ -106,7 +106,6 @@ public class LeverNobManager : MonoBehaviour {
         }
         transform.position = new Vector3(defPos.x + pos.x, defPos.y, defPos.z);
 
-        Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
         if (pos.x > moveThreshold)
         {
             playerMng.PushRightButton();
