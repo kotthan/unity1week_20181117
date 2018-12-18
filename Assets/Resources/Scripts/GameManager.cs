@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
         if ( isGameOver == true ){
             return;
         }
+        isGameOver = true;
         var scoreManager = ScoreManager.GetComponent<ScoreManager>();
         scoreManager.CheckHiscore();
         textGameOver.SetActive(true);
