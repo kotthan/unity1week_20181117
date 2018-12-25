@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -87,22 +87,22 @@ public class LeverNobManager : MonoBehaviour {
         //Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
         if (pos.x > moveThreshold)
         {
-            playerMng.PushRightButton();
+            Right();
         }
         else if (pos.x < -moveThreshold)
         {
-            playerMng.PushLeftButton();
+            Left();
         }
         else
         {
-            playerMng.ReleaseMoveButton();
+            Center();
         }
     }
 
     private void OnMouseUp()
     {
         Debug.Log("mouse Release");
-        playerMng.ReleaseMoveButton();
+        Center();
         fingerId = -1;
     }
 #else
@@ -163,4 +163,15 @@ public class LeverNobManager : MonoBehaviour {
     }
 #endif
 
+    private void Right(){
+        playerMng.PushRightButton();
+    }
+
+    private void Left(){
+        playerMng.PushLeftButton();
+    }
+
+    private void Center(){
+        playerMng.ReleaseMoveButton();
+    }
 }
