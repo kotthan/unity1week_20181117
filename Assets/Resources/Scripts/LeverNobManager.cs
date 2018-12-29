@@ -1,28 +1,34 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class LeverNobManager : MonoBehaviour {
+public class LeverNobManager : MonoBehaviour
+{
 
     public float moveThreshold;
     public float moveMax;
     public GameObject playerObj;
     private PlayerManager playerMng;
+    public GameObject nobCenter;
+    public GameObject nobRight;
+    public GameObject nobLeft;
 
     private Vector3 defPos;
     private Vector3 startPos;
     private int fingerId = -1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         defPos = transform.position;
-        Debug.Log("def:"+defPos.ToString());
+        Debug.Log("def:" + defPos.ToString());
         playerMng = playerObj.GetComponent<PlayerManager>();
-	}
+    }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
     }
 
@@ -30,10 +36,10 @@ public class LeverNobManager : MonoBehaviour {
     void CheckTouch()
     {
         if (Input.touchCount <= 0) { return; }
-        if (fingerId != -1 ) { return; }
+        if (fingerId != -1) { return; }
         foreach (Touch touch in Input.touches)
         {
-            if ( touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began)
             {
                 fingerId = touch.fingerId;
                 Debug.Log("finger" + fingerId);
@@ -74,35 +80,35 @@ public class LeverNobManager : MonoBehaviour {
             newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         var pos = newPos - startPos;
-        if( pos.x > moveMax )
+        if (pos.x > moveMax)
         {
             pos = new Vector3(moveMax, pos.y, pos.z);
         }
-        else if(pos.x < -moveMax)
+        else if (pos.x < -moveMax)
         {
             pos = new Vector3(-moveMax, pos.y, pos.z);
         }
-        transform.position = new Vector3(defPos.x+pos.x, defPos.y, defPos.z);
+        transform.position = new Vector3(defPos.x + pos.x, defPos.y, defPos.z);
 
         //Debug.Log("pos.x=" + pos.x + " def" + defPos.x);
         if (pos.x > moveThreshold)
         {
-            playerMng.PushRightButton();
+            Right();
         }
         else if (pos.x < -moveThreshold)
         {
-            playerMng.PushLeftButton();
+            Left();
         }
         else
         {
-            playerMng.ReleaseMoveButton();
+            Center();
         }
     }
 
     private void OnMouseUp()
     {
         Debug.Log("mouse Release");
-        playerMng.ReleaseMoveButton();
+        Center();
         fingerId = -1;
     }
 #else
@@ -163,4 +169,27 @@ public class LeverNobManager : MonoBehaviour {
     }
 #endif
 
+    private void Right()
+    {
+        playerMng.PushRightButton();
+        nobCenter.SetActive(false);
+        nobRight.SetActive(true);
+        nobLeft.SetActive(false);
+    }
+
+    private void Left()
+    {
+        playerMng.PushLeftButton();
+        nobCenter.SetActive(false);
+        nobRight.SetActive(false);
+        nobLeft.SetActive(true);
+    }
+
+    private void Center()
+    {
+        playerMng.ReleaseMoveButton();
+        nobCenter.SetActive(true);
+        nobRight.SetActive(false);
+        nobLeft.SetActive(false);
+    }
 }
