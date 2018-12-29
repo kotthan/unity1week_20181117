@@ -154,6 +154,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.otutama.tenvader
     Standalone: com.Company.ProductName
+    iOS: com.otutama.tenvaders
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 21
