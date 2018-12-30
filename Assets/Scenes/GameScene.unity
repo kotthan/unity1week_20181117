@@ -2240,7 +2240,7 @@ Prefab:
     - target: {fileID: 58422658715339600, guid: bdec6e1b604bbaa45a3f9718ab95d64d,
         type: 2}
       propertyPath: m_Radius
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58422658715339600, guid: bdec6e1b604bbaa45a3f9718ab95d64d,
         type: 2}
@@ -2251,6 +2251,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.x
       value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 58422658715339600, guid: bdec6e1b604bbaa45a3f9718ab95d64d,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec6e1b604bbaa45a3f9718ab95d64d, type: 2}
