@@ -158,8 +158,8 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.otutama.tenvader
-    Standalone: com.Company.ProductName
-    iOS: com.otutama.tenvaders
+    Standalone: net.otutama.tenvaders
+    iOS: net.otutama.tenvaders
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 21
