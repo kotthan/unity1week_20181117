@@ -75,22 +75,22 @@ public class InvadersManager : MonoBehaviour
     {
         //下に１段下がる
         //Debug.Log("Down");
-        var pos = transform.position;
-        transform.position = new Vector2(pos.x, pos.y - move.y);
+        var pos = transform.localPosition;
+        transform.localPosition = new Vector2(pos.x, pos.y - move.y);
     }
 
     void Right()
     {
         //Debug.Log("Right");
-        var pos = transform.position;
-        transform.position = new Vector2(pos.x + move.x, pos.y);
+        var pos = transform.localPosition;
+        transform.localPosition = new Vector2(pos.x + move.x, pos.y);
     }
 
     void Left()
     {
         //Debug.Log("Left");
-        var pos = transform.position;
-        transform.position = new Vector2(pos.x - move.x, pos.y);
+        var pos = transform.localPosition;
+        transform.localPosition = new Vector2(pos.x - move.x, pos.y);
     }
 
     public void downDetect(){
