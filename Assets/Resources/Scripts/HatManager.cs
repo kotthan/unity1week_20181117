@@ -11,6 +11,7 @@ public class HatManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        var canvasScale = GameObject.Find("CanvasGame").transform.localScale;
         Vector3 tr;
         if( transform.position.x < 0 ){
             //左に生成されたので右に進む
@@ -26,7 +27,7 @@ public class HatManager : MonoBehaviour {
         var scoreManager = GameObject.Find("ScoreManager");
         score = scoreManager.GetComponent<ScoreManager>();
 
-        GetComponent<Rigidbody2D>().velocity = tr * speed;
+        GetComponent<Rigidbody2D>().velocity = tr * speed * canvasScale.x;
 	}
 	
 	// Update is called once per frame
