@@ -43,7 +43,8 @@ public class HatControllerManager : MonoBehaviour {
         }
 
         var q = new Quaternion();
-        Instantiate(HatPrefab, pos, q);
+        var hat = Instantiate(HatPrefab, pos, q);
+        hat.transform.SetParent(transform,false);
         SetTimer();
     }
 }
