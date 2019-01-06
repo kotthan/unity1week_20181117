@@ -3545,7 +3545,7 @@ MonoBehaviour:
   lifePrefab: {fileID: 1324270305922006, guid: ea10419a04bbb4f8b8a58cf9f291bc67, type: 2}
   lifeText: {fileID: 976179526}
   maxLife: 3
-  basePos: {x: -400, y: -830}
+  basePos: {x: -270, y: -575, z: -40}
   dist: 100
   playerObj: {fileID: 32140939}
   gamaManager: {fileID: 517084397}

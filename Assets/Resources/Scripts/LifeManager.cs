@@ -8,7 +8,7 @@ public class LifeManager : MonoBehaviour {
     public GameObject lifePrefab;
     public GameObject lifeText;
     public int maxLife;
-    public Vector2 basePos;
+    public Vector3 basePos;
     public float dist;
     public GameObject playerObj;
     private PlayerManager player;
@@ -20,6 +20,7 @@ public class LifeManager : MonoBehaviour {
 
 	// Use this for initialization
     void Start () {
+        var canvasGame = GameObject.Find("CanvasGame").transform;
         player = playerObj.GetComponent<PlayerManager>();
         life = PlayerPrefs.GetInt(key, maxLife);
         PlayerPrefs.SetInt(key, maxLife);
@@ -27,9 +28,11 @@ public class LifeManager : MonoBehaviour {
         lifeText.GetComponent<Text>().text = life.ToString();
         lifeIcons = new List<GameObject>{};
         for (int i = 0; i < life - 1; i++ ){
-            var pos = new Vector3(dist * i + basePos.x, basePos.y);
+            var pos = new Vector3(dist * i + basePos.x, basePos.y, basePos.z);
             var q = new Quaternion();
             var icon = Instantiate(lifePrefab,pos,q);
+            //var icon = Instantiate(lifePrefab, canvasGame);
+            icon.transform.SetParent(canvasGame, false);
             lifeIcons.Add(icon);
         }
 	}
