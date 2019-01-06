@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour {
     public GameObject gameManager;
     private Animator animator;
     public GameObject damageBack;
+    private Transform canvasGame;
 
     public enum MOVE_DIR                //移動方向定義
     {
@@ -27,6 +28,7 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        canvasGame = GameObject.Find("CanvasGame").transform;
         animator = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody2D>();
         tf = this.transform;
@@ -68,7 +70,7 @@ public class PlayerManager : MonoBehaviour {
                 break;
         }
 
-        rbody.velocity = new Vector2(moveSpeed, rbody.velocity.y);
+        rbody.velocity = new Vector2(moveSpeed * canvasGame.localScale.x, rbody.velocity.y);
     }
 
     public void PushLeftButton() {
