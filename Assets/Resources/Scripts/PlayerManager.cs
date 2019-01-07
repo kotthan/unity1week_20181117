@@ -90,7 +90,8 @@ public class PlayerManager : MonoBehaviour {
 
     public void Shot() {
         if (bulletInstance == null) {
-            bulletInstance = Instantiate(burret, tf.position, tf.rotation);
+            bulletInstance = Instantiate(burret, transform.parent, false);
+            bulletInstance.transform.SetPositionAndRotation(tf.position, tf.rotation);
         }
     }
 
