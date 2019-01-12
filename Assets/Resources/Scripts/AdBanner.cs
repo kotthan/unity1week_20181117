@@ -32,7 +32,7 @@ public class AdBanner : MonoBehaviour {
         string adUnitId = "unused";
 #elif UNITY_ANDROID
         // Android
-        string adUnitId = "ca-app-pub-2945918043757109/6387542702";
+        string adUnitId = "ca-app-pub-2945918043757109/8525787704";
 #elif UNITY_IOS
         // iOS
         string adUnitId = "ca-app-pub-2945918043757109/8080113926";
