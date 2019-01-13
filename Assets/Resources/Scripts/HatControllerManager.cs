@@ -17,8 +17,13 @@ public class HatControllerManager : MonoBehaviour {
         SetTimer();
 	}
 
-    void SetTimer() {
-        interval = Random.Range(minInterval, maxInterval);
+    void SetTimer(int val=0) {
+        if (val == 0) {
+            interval = Random.Range(minInterval, maxInterval);
+        }
+        else {
+            interval = (float)val;
+        }
         time = 0;
     }
 	
@@ -33,6 +38,14 @@ public class HatControllerManager : MonoBehaviour {
 	}
 
     public void CreateHat(){
+
+        var hat = GameObject.Find("Hat");
+        if ( hat != null ) {
+            //すでにあるので作らずに再度タイマーを設定
+            SetTimer(5);
+            return;
+        }
+
         Vector3 pos;
         //左右どっち側に作るか
         if ( Random.Range(0, 2) == 0 ){
@@ -43,8 +56,9 @@ public class HatControllerManager : MonoBehaviour {
         }
 
         var q = new Quaternion();
-        var hat = Instantiate(HatPrefab, pos, q);
+        hat = Instantiate(HatPrefab, pos, q);
         hat.transform.SetParent(transform,false);
+        hat.name = "Hat";
         SetTimer();
     }
 }
